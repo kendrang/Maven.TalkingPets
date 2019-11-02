@@ -1,6 +1,8 @@
 package io.zipcoder.polymorphism;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -57,15 +59,21 @@ public class MainApplication {
 
 
                     }
+
+                    PetComparator petCompare = new PetComparator();
+
+
+                    Collections.sort(petsLog,petCompare);
+
                     System.out.println("\nYour pets: \n");
 
                     for (int j = 0 ; j < petsLog.size() ; j++){
 
-                        System.out.println(petsLog.get(j).getName() + " " + petsLog.get(j).speak());
+                        System.out.println("\n" +petsLog.get(j).getClass().getSimpleName() + " " + petsLog.get(j).getName() + " Says :" + petsLog.get(j).speak());
 
                     }
 
-                    System.out.println(" \n I bet they're all cute!");
+                    System.out.println("\n I bet they're all cute!");
                 }
                 System.out.println("Thank you for telling me about your pets! ");
                 turnOn = false;
